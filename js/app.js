@@ -32,6 +32,36 @@ var jedis = [
 ];
 
 // 1. Elabora una función que retorne a los Jedis
-// 2. Elabora una función para filtrar por nombre, por edad y marca o modelo.
+// 2. Elabora una función para obtener datos (nombre, por edad y marca o modelo).
 // 3. Elabora una función que de el promedio de las edades de los Jedis
 // 4. Elabora una función que enliste todas las marcas o modelos de coches.
+
+function returnJedis(array) {
+  console.log(array);
+  return array;
+}
+
+returnJedis(jedis);
+
+function getData(array) {
+  var age = [];
+  for (var i = 0; i < array.length; i++) {
+    var name =array[i].name;
+    var cars = array[i].cars;
+    age.push(array[i].age);
+  }
+  averageAge(age);
+}
+
+function averageAge(array) {
+  var total = 0;
+
+  for (var i = 0; i < array.length; i++) {
+    total += array[i];
+  }
+  total = total / array.length;
+  console.log(total);
+
+}
+
+getData(jedis);
